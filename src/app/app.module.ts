@@ -5,7 +5,7 @@ import ruLocale from "@angular/common/locales/ru";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainLayoutComponent } from './shared/component/main-layout/main-layout.component';
+import { HomeLayoutComponent } from './shared/component/home-layout/home-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import {PostComponent} from "./shared/component/post/post.component";
@@ -26,7 +26,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
 @NgModule({
   declarations: [
     AppComponent,
-    MainLayoutComponent,
+    HomeLayoutComponent,
     HomePageComponent,
     PostPageComponent,
     PostComponent
