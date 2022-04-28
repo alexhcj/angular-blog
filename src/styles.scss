@@ -9,7 +9,11 @@ body {
   font-family: $OpenSans;
   font-size: $font-size;
   line-height: $line-height;
-  color: $color-dark-light;
+  color: $color-dark100;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -18,5 +22,11 @@ img {
 }
 
 button {
+  padding: 0;
   font-family: $NotoSans;
+}
+
+svg {
+  width: inherit;
+  height: inherit;
 }
