@@ -3,10 +3,12 @@ $font-size: 13px;
 $line-height: 21px;
 
 // colors
-$color-primary: #dc3545;
-$color-dark: #333333;
-$color-dark-light: #8D8C8C;
-$color-light: #f4f4f4;
+$color-primary: #58BCB3;
+$color-dark: #000000;
+$color-dark100: #8D8C8C;
+$color-dark200: #606060;
+$color-light100: #FFFFFF;
+$color-light200: #F1F1F2;
 
 // colors-action
 $color-danger: #dc3545;
@@ -16,3 +18,16 @@ $color-success: #28a745;
 $OpenSans: 'Open Sans', sans-serif;
 $NotoSans: 'Noto Sans', sans-serif;
 $Oswald: 'Oswald', sans-serif;
+
+// transitions
+$transition-default: all .2s ease-out;
+$transition-search: all .3s ease-in-out;
+
+// box-shadows
+$box-shadow-navbar: 1px 2px 3px 0 rgb(0 0 0 / 8%);
+$box-shadow-dropdown: 0 3px 2px 0 rgb(0 0 0 / 8%);
+
+// z-indexes
+$z-index90: 90;
+$z-index100: 100;
+$z-index-1: -1;
