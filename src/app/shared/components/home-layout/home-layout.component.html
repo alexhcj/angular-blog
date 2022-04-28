@@ -1,0 +1,60 @@
+<nav class="navbar" [class.sticky]="isSticky">
+  <div class="logo">
+    <img class="logo-img" src="../../../../assets/images/logo.png" alt="Flow blog logotype">
+  </div>
+  <ul class="nav">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/posts']">Posts</a>
+    </li>
+      <li class="nav-item" (mouseover)="showDropdown(true)" (mouseleave)="showDropdown(false)">
+        <a class="nav-link" [routerLink]="['/category']">Category</a>
+        <app-dropdown *ngIf="isDropdownActive"></app-dropdown>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/about']">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+    </li>
+  </ul>
+  <!--  TODO: add modal with contacts-->
+  <div class="navbar-right">
+    <ul class="social">
+      <li class="social-item">
+        <a class="social-link">
+          <svg-icon class="social-svg" src="assets/svg/github.svg"></svg-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a class="social-link">
+          <svg-icon class="social-svg" id="vk" src="assets/svg/vk.svg"></svg-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a class="social-link">
+          <svg-icon class="social-svg" src="assets/svg/instagram.svg"></svg-icon>
+        </a>
+      </li>
+    </ul>
+    <!-- TODO: add focus when search is opened -->
+    <!-- TODO: fix nav moving. center should be fixed -->
+    <!-- TODO: fix search input appear. input placeholder appears from icon. should be straight-->
+    <div class="search">
+      <button (click)="showSearch(isSearchActive)" [class.active]="isSearchActive" class="search-btn">
+        <svg-icon [class.active]="isSearchActive" class="search-icon" src="assets/svg/magnifier.svg"></svg-icon>
+      </button>
+      <div [class.active]="isSearchActive" class="search-input-box">
+        <form [formGroup]="form" class="search-form">
+          <input class="search-input" formControlName="search" type="text" placeholder="Search">
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

@@ -14,6 +14,7 @@ import {PostComponent} from "./shared/components/post/post.component";
 import {AuthInterceptor} from "./admin/shared/auth.interceptor";
 import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
 import {AngularSvgIconModule} from "angular-svg-icon";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 registerLocaleData(ruLocale, 'ru')
 
@@ -36,6 +37,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
