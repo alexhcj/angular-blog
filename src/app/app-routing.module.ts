@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
-import {HomeLayoutComponent} from "./shared/component/home-layout/home-layout.component";
+import {HomeLayoutComponent} from "./shared/components/home-layout/home-layout.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {PostPageComponent} from "./post-page/post-page.component";
 
