@@ -1,0 +1,28 @@
+@import '../../../shared/styles/vars';
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding: 15px 0;
+  width: 200px;
+  background-color: $color-light100;
+  z-index: $z-index100;
+  box-shadow: $box-shadow-dropdown;
+  transition: $transition-default;
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  &-item {
+    margin: 0 17px;
+    transition: $transition-default;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

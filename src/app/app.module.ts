@@ -12,8 +12,7 @@ import {PostComponent} from "./shared/component/post/post.component";
 import {SharedModule} from "./admin/shared/shared.module";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptor} from "./admin/shared/auth.interceptor";
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
+import { DropdownComponent } from './shared/components/dropdown/dropdown.component';
 
 registerLocaleData(ruLocale, 'ru')
 
@@ -29,7 +28,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     HomeLayoutComponent,
     HomePageComponent,
     PostPageComponent,
-    PostComponent
+    PostComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
