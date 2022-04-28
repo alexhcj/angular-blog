@@ -2,10 +2,12 @@ import {NgModule, Provider} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {registerLocaleData} from "@angular/common";
 import ruLocale from "@angular/common/locales/ru";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeLayoutComponent } from './shared/component/home-layout/home-layout.component';
+import { environment } from '../environments/environment';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { HomeLayoutComponent } from './shared/components/home-layout/home-layout.component';
