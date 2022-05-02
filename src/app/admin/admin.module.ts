@@ -13,6 +13,7 @@ import {AuthGuard} from "./shared/services/auth.guard";
 import {SearchPipe} from "./shared/search.pipe";
 import {AlertComponent} from "./shared/components/alert/alert.component";
 import {AlertService} from "./shared/services/alert.service";
+import {AngularSvgIconModule} from "angular-svg-icon";
 
 @NgModule({
   declarations: [
@@ -30,14 +31,17 @@ import {AlertService} from "./shared/services/alert.service";
     ReactiveFormsModule,
     SharedModule,
     RouterModule.forChild([
-      {path: '', component: AdminLayoutComponent, children: [
+      {
+        path: '', component: AdminLayoutComponent, children: [
           {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
           {path: 'login', component: LoginPageComponent},
           {path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard]},
           {path: 'create', component: CreatePageComponent, canActivate: [AuthGuard]},
           {path: 'post/:id/edit', component: EditPageComponent, canActivate: [AuthGuard]},
-        ]}
-    ])
+        ]
+      }
+    ]),
+    AngularSvgIconModule
   ],
   exports: [RouterModule],
   providers: [AuthGuard, AlertService]

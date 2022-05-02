@@ -1,21 +1,22 @@
 <app-alert></app-alert>
 
-<nav class="navbar bg-primary">
-  <h1>
-    <a routerLink="/">Angular Admin</a>
-  </h1>
+<nav class="navbar">
+  <a class="logo" routerLink="/">
+    <img class="logo-img" src="assets/images/logo.png" alt="Flow blog logotype">
+  </a>
 
-  <ul *ngIf="auth.isAuthenticated()">
-    <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'dashboard']">Главная</a>
+  <ul class="nav" *ngIf="auth.isAuthenticated()">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/admin', 'dashboard']">Dashboard</a>
     </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'create']">Создать</a>
-    </li>
-    <li>
-      <a href="#" (click)="logout($event)">Выйти</a>
+    <li class="nav-item"  routerLinkActive="active">
+      <a class="nav-link" [routerLink]="['/admin', 'create']">Create</a>
     </li>
   </ul>
+  <button class="logout" (click)="logout($event)">
+    Logout
+    <svg-icon class="logout-img" src="assets/svg/logout.svg"></svg-icon>
+  </button>
 </nav>
 
 <div class="container">
