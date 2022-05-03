@@ -9,7 +9,9 @@ $color-dark100: #8D8C8C;
 $color-dark200: #606060;
 $color-light100: #FFFFFF;
 $color-light200: #F1F1F2;
+$color-light300: #E5E5E5;
 $color-red: #BA1A2E;
+$color-shadow1: #00000014;
 
 // colors-action
 $color-danger: #dc3545;
@@ -26,8 +28,9 @@ $transition-search: all .3s ease-in-out;
 $transition-btn-before: all .5s cubic-bezier(.18,.89,.32,1.48);
 
 // box-shadows
-$box-shadow-navbar: 1px 2px 3px 0 rgb(0 0 0 / 8%);
-$box-shadow-dropdown: 0 3px 2px 0 rgb(0 0 0 / 8%);
+$box-shadow-default: 0 3px 2px 0 $color-light300;
+$box-shadow-navbar: 1px 2px 3px 0 $color-shadow1;
+$box-shadow-dropdown: 0 3px 2px 0 $color-shadow1;
 
 // z-indexes
 $z-index10: 10;
