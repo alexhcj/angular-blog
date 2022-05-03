@@ -29,10 +29,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .validation {
+  margin-top: 3px;
   font-size: 12px;
   color: $color-red;
 }
