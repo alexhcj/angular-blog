@@ -1,6 +1,29 @@
+@import '../../../../shared/styles/vars';
+
 .alert-wrap {
   position: fixed;
   top: 50px;
   right: 40px;
   max-width: 200px;
+}
+
+.alert {
+  padding: 10px 15px;
+  line-height: 18px;
+  font-size: 14px;
+
+  &-danger {
+    color: $color-light100;
+    background-color: $color-red;
+  }
+
+  &-warning {
+    color: $color-light100;
+    background-color: $color-yellow;
+  }
+
+  &-success {
+    color: $color-light100;
+    background-color: $color-green;
+  }
 }
