@@ -28,10 +28,12 @@ export class CreatePageComponent implements OnInit {
     }
 
     const post: Post = {
+      category: this.form.value.category,
       title: this.form.value.title,
       author: this.form.value.author,
       text: this.form.value.text,
-      date: new Date()
+      date: new Date(),
+      tags: this.form.value.tags
     }
 
     this.postService.create(post).subscribe({
