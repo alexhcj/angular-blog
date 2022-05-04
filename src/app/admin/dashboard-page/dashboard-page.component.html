@@ -1,32 +1,42 @@
-<div *ngIf="posts.length; else loading">
-  <div class="form-control">
-    <input type="text" placeholder="Найти пост..." [(ngModel)]="searchStr">
+<div>
+  <div class="header">
+    <div class="search">
+      <label class="label" for="search">Search post</label>
+      <input class="input" id="search" type="text" placeholder="Elon Musk launched..." [(ngModel)]="searchStr">
+    </div>
   </div>
-  <table>
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>Автор</th>
-      <th>Название</th>
-      <th>Дата</th>
-      <th>Действие</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
-      <td>{{idx + 1}}</td>
-      <td>{{post.author}}</td>
-      <td>{{post.title}}</td>
-      <td>{{post.date | date:'medium':undefined:'ru'}}</td>
-      <td>
-        <button class="btn btn-link open" [routerLink]="['/admin', 'post', post.id, 'edit']">Открыть</button>
-        <a (click)="remove(post.id!)">Удалить</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table">
+    <div class="table-header">
+      <span class="table-link number">№</span>
+      <span class="table-link author">Author</span>
+      <span class="table-link title">Title</span>
+      <span class="table-link date">Date</span>
+      <span class="table-link actions">Actions</span>
+    </div>
+    <div class="table-body" *ngIf="!loading; else loader">
+      <div class="posts" *ngIf="posts.length > 0; else empty">
+        <div class="post" *ngFor="let post of posts | searchPosts:searchStr; let idx = index">
+          <span class="table-link number">{{idx + 1}}</span>
+          <span class="table-link author">{{post.author}}</span>
+          <span class="table-link title">{{post.title}}</span>
+          <span class="table-link date">{{post.date | date:'medium':undefined:'en'}}</span>
+          <span class="table-link actions">
+            <a class="edit" [routerLink]="['/admin', 'post', post.id, 'edit']">
+              <svg-icon class="edit-svg" src="assets/svg/pencil.svg"></svg-icon>
+            </a>
+            <button class="delete" (click)="remove(post.id!)">
+              <svg-icon class="delete-svg" src="assets/svg/trash.svg"></svg-icon>
+            </button>
+          </span>
+        </div>
+      </div>
+      <ng-template #empty>
+        <div class="empty">No post was found on the server</div>
+      </ng-template>
+    </div>
+  </div>
 </div>
 
-<ng-template #loading>
-  <p class="class-center">Идёт загрузка...</p>
+<ng-template #loader>
+  <svg-icon class="loader" src="assets/svg/loader.svg"></svg-icon>
 </ng-template>

@@ -1,3 +1,142 @@
-.open {
-  margin-right: 10px;
+@import '../../shared/styles/vars';
+
+.header {
+  background-color: lighten($color-yellow, 3%);
+}
+
+.search {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 20px 28px;
+  max-width: 300px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 78px;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-top: 17px solid transparent;
+    border-bottom: 18px solid transparent;
+    border-left: 17px solid $color-light100;
+  }
+}
+
+.label {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: $Oswald;
+  color: $color-dark;
+}
+
+.input {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+}
+
+.table {
+  width: 100%;
+
+  &-header {
+    display: flex;
+    border-bottom: 1px solid $color-light200;
+
+    .table-link {
+      padding: 7px 12px;
+      text-align: left;
+      font-weight: 700;
+      color: $color-dark;
+    }
+  }
+
+  &-body {
+    margin-bottom: 10px;
+
+    .table-link {
+      padding: 7px 12px;
+    }
+  }
+}
+
+.post {
+  display: flex;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-light200;
+  }
+}
+
+.number {
+  width: 10%
+}
+
+.author {
+  width: 20%;
+}
+
+.title {
+  width: 30%;
+}
+
+.date {
+  width: 25%;
+}
+
+.actions {
+  width: 15%;
+}
+
+.edit {
+  margin-right: 15px;
+
+  &-svg {
+    width: 15px;
+    height: 15px;
+    transition: $transition-default;
+  }
+
+  &:hover {
+    .edit-svg {
+      fill: lighten($color-dark, 35%);
+    }
+  }
+}
+
+.delete {
+  border: none;
+  outline: none;
+  background-color: $color-light100;
+  cursor: pointer;
+
+  &-svg {
+    width: 15px;
+    height: 15px;
+    fill: $color-red;
+    transition: $transition-default;
+  }
+
+  &:hover {
+    .delete-svg {
+      fill: lighten($color-red, 15%);
+    }
+  }
+}
+
+.empty {
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.loader {
+  display: block;
+  width: 50px;
+  height: 50px;
 }
