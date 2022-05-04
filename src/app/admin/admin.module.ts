@@ -13,7 +13,6 @@ import {AuthGuard} from "./shared/services/auth.guard";
 import {SearchPipe} from "./shared/search.pipe";
 import {AlertComponent} from "./shared/components/alert/alert.component";
 import {AlertService} from "./shared/services/alert.service";
-import {AngularSvgIconModule} from "angular-svg-icon";
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import {AngularSvgIconModule} from "angular-svg-icon";
         ]
       }
     ]),
-    AngularSvgIconModule
   ],
   exports: [RouterModule],
   providers: [AuthGuard, AlertService]
