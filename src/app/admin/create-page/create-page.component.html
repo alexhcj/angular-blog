@@ -1,26 +1,60 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <h1>Создание нового поста</h1>
+  <div class="header">
+    <h1 class="title">Create new post</h1>
+  </div>
 
-  <div class="form-control"[ngClass]="{invalid: form.get('title')!.touched && form.get('title')!.invalid}">
-    <label for="title">Название поста</label>
-    <input type="text" id="title" formControlName="title">
-    <div class="validation" *ngIf="form.get('title')!.touched && form.get('title')!.invalid">
-      <small *ngIf="form.get('title')!.errors?.['required']">Введите название поста</small>
+  <div class="content">
+<!--    <div class="control">-->
+<!--      <label class="label label-control" for="file">-->
+<!--        <span>Preview image</span>-->
+<!--        <div class="file">-->
+<!--          <svg-icon class="file-svg" src="assets/svg/input-file-img.svg"></svg-icon>-->
+<!--          <span>Choose image</span>-->
+<!--        </div>-->
+<!--      </label>-->
+<!--      <input type="file" id="file" formControlName="previewImg" hidden>-->
+<!--    </div>-->
+
+    <div class="control">
+      <label class="label" for="imgUrl">Preview image url</label>
+      <input class="input" type="text" id="imgUrl" formControlName="imgUrl">
     </div>
-  </div>
 
-  <div class="form-control">
-    <label>Контент поста:</label>
-    <quill-editor formControlName="text"></quill-editor>
-  </div>
-
-  <div class="form-control"[ngClass]="{invalid: form.get('author')!.touched && form.get('author')!.invalid}">
-    <label for="author">Автор поста</label>
-    <input type="text" id="author" formControlName="author">
-    <div class="validation" *ngIf="form.get('author')!.touched && form.get('author')!.invalid">
-      <small *ngIf="form.get('author')!.errors?.['required']">Введите автора поста</small>
+    <div class="control" [ngClass]="{invalid: form.get('title')!.touched && form.get('title')!.invalid}">
+      <label class="label" for="title">Title</label>
+      <input class="input" type="text" id="title" formControlName="title">
+      <div class="validation" *ngIf="form.get('title')!.touched && form.get('title')!.invalid">
+        <small *ngIf="form.get('title')!.errors?.['required']">Enter post title</small>
+      </div>
     </div>
-  </div>
 
-  <button class="btn btn-block btn-dark" type="submit" [disabled]="form.invalid">Создать пост</button>
+    <div class="control" [ngClass]="{invalid: form.get('title')!.touched && form.get('category')!.invalid}">
+      <label for="category" class="label">Category</label>
+      <select class="input" name="category" id="category" formControlName="category">
+        <option class="option" *ngFor="let category of selectCategories" value="{{category.category}}">{{category.category}}</option>
+      </select>
+    </div>
+
+    <div class="control" [ngClass]="{invalid: form.get('tags')!.touched && form.get('tags')!.invalid}">
+      <label for="tags" class="label">Tags</label>
+      <select class="input" name="tags" id="tags" formControlName="tags">
+        <option class="option" *ngFor="let tag of selectTags" value="{{tag.tag}}">{{tag.tag}}</option>
+      </select>
+    </div>
+
+    <div class="control">
+      <label class="label">Content</label>
+      <quill-editor formControlName="text"></quill-editor>
+    </div>
+
+    <div class="control" [ngClass]="{invalid: form.get('author')!.touched &&  form.get('author')!.invalid}">
+      <label class="label" for="author">Author</label>
+      <input class="input" type="text" id="author" formControlName="author">
+      <div class="validation" *ngIf="form.get('author')!.touched && form.get('author')!.invalid">
+        <small *ngIf="form.get('author')!.errors?.['required']">Enter post author</small>
+      </div>
+    </div>
+
+    <button class="btn btn-block btn-dark" type="submit" [disabled]="form.invalid || form.disabled">Create post</button>
+  </div>
 </form>
