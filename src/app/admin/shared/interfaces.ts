@@ -11,12 +11,13 @@ export interface FbAuthResponse {
 
 export interface Post {
   id?: string
-  category: string
+  imgUrl?: string
   title: string
+  category: string
+  tags: string[]
   text: string
   author: string
   date: Date
-  tags: string[]
 }
 
 export interface FbCreateResponse {
