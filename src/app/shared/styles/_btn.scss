@@ -1,0 +1,46 @@
+@import '../../shared/styles/vars';
+
+.btn {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  outline: none;
+  border: none;
+  line-height: 16px;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  color: $color-light100;
+  background-color: $color-primary;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: #00000019;
+    z-index: $z-index10;
+    transition: $transition-btn-before;
+  }
+
+  &:disabled {
+    background-color: $color-light200;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
